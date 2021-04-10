@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Controle financeiro para transações de compras e vendas de mercadorias. Teste de front-end Via Varejo.">
+  <link rel="shortcut icon" href="./assets/logo.svg">
+  <title>Controle Financeiro</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="#" class="brand"></a>
+        <h1 class="system-title">
+          Controle financeiro
+        </h1>
+      </div>
+      <div class="menu-hover-control">
+        <button type="button" class="open-menu">Menu</button>
+        <nav class="navbar-menu">
+          <button type="button" class="close-menu">Fechar</button>
+          <ul>
+            <li><a href="#">Cadastro de transações</a></li>
+            <li><a href="#">Limpar dados</a></li>
+            <li class="active"><a href="#">Salvar no servidor</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="container">
+      <!-- NOVA TRANSAÇÃO -->
+      <section class="section-new-transaction">
+        <form id="meuForm">
+          <h1>Nova transação</h1>
+          <div class="form-group">
+            <div class="form-input">
+              <label for="tipo-transacao">Tipo de transação</label>
+              <select name="tipoTransacao">
+                <option value="">Selecione</option>
+                <option value="1">Compra</option>
+                <option value="2">Venda</option>
+              </select>
+              <em>O campo acima é obrigatório</em>
+            </div>            
+            <div class="form-input">
+              <label for="nome-mercadoria">Nome da mercadoria</label>
+              <input type="text" name="nomeMercadoria" placeholder="Input">
+              <em>O campo acima é obrigatório</em>
+            </div>  
+            <div class="form-input">  
+              <label for="valor-mercadoria">Valor</label>
+              <!-- O min e step PERMITE INSERIR VALORES DE PONTO FLUTUANTE E TRATA OS VALORES NEGATIVOS  -->
+              <input type="number" min="0.01" step="0.01" name="valorMercadoria" placeholder="0,00">          
+              <em>O campo acima é obrigatório</em>
+              <p>Preencha um valor de mercadoria válido!</p>
+            </div>            
+            <button type="submit">Adicionar transação</button>
+          </div>
+        </form>
+      </section>
+      <!-- EXTRATO -->
+      <section class="section-transaction-statement">
+        <h1>Extrato de transações</h1>
+        <table class="table-transaction-statement" table-transaction>
+          <thead>
+            <tr>  
+              <th></th>
+              <th>Mercadoria</th>
+              <th class="text-right">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="3" class="text-center">Por favor, adicione uma nova transação</td>
+            </tr>
+            
+            <!--  
+            <tr>
+              <td class="text-right">-</td>
+              <td class="">Produto 1 </td>
+              <td class="text-right">R$ 19,99</td>
+            </tr>
+            -->
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <th></th>
+              <th>Total</th>
+              <th class="text-right">
+                <p>R$ -21,08
+                <p>
+                  <em class="uppercase" style="font-weight: 100;font-size: 12px">[Prejuízo]</em>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </div>
+  </main>
+  <!-- CHAMADA JS -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
