@@ -235,7 +235,11 @@ img {
     transition: all 0.5s 0s ease;
   }
 
-  .menu-hover-control:hover .navbar-menu {
+  /* 
+  MENU HUMBURGUER
+  OBS. EU CHAMO O "opened" LÁ NO JS PARA FAZER ELE ABRIR E FECHA COM UMA FUNÇÃO, OQUE ANTES ERA FEITO COM O hover AQUI MESMO 
+  */
+  .menu-hover-control .navbar-menu.opened {
     right: 0px;
     -webkit-transition: all 0.5s 0s ease;
     -moz-transition: all 0.5s 0s ease;
@@ -369,13 +373,5 @@ img {
 form em {
   display: none;
   color: red;
-  margin-bottom: 10px;
-  margin-top: 0;
-}
-
-form p {
-  display: none;
-  color: red;
-  margin-bottom: 10px;
-  margin-top: 0;
+  margin-bottom: 15px;
 }

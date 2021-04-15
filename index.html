@@ -22,9 +22,10 @@
         </h1>
       </div>
       <div class="menu-hover-control">
-        <button type="button" class="open-menu">Menu</button>
-        <nav class="navbar-menu">
-          <button type="button" class="close-menu">Fechar</button>
+        <button type="button" class="open-menu" onclick="trocarMenu()">Menu</button>
+        
+        <nav class="navbar-menu">          
+          <button type="button" class="close-menu" onclick="trocarMenu()">Fechar</button>
           <ul>
             <li><a href="#">Cadastro de transações</a></li>
             <li><a href="#">Limpar dados</a></li>
@@ -59,9 +60,11 @@
             <div class="form-input">  
               <label for="valor-mercadoria">Valor</label>
               <!-- O min e step PERMITE INSERIR VALORES DE PONTO FLUTUANTE E TRATA OS VALORES NEGATIVOS  -->
-              <input type="number" min="0.01" step="0.01" name="valorMercadoria" placeholder="0,00">          
+              <input type="text" onkeypress="aplicaMascara(event)" name="valorMercadoria" placeholder="0,00">
               <em>O campo acima é obrigatório</em>
-              <p>Preencha um valor de mercadoria válido!</p>
+              <!-- 
+                EU PODERIA APENAS USAR O min="0.01" step="0.01" NO INPUT QUE JÁ IRIA FUNCIONAR MAS UTILIZEI COM UM ALERT LÁ NO JS PARA ALERTAR O USUÁRIO.
+              -->
             </div>            
             <button type="submit">Adicionar transação</button>
           </div>
