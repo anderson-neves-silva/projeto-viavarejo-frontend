@@ -23,13 +23,15 @@
       </div>
       <div class="menu-hover-control">
         <button type="button" class="open-menu" onclick="trocarMenu()">Menu</button>
-        
+        <!-- 
+        O trecho “javascript:void(0)” é para ao clicar não acontecer nada, ou seja, leva a página a lugar nenhum, é necessário para utilização do evento “onclick” onde iremos criar a nossa função que irá salvar no servidor.
+         -->
         <nav class="navbar-menu">          
           <button type="button" class="close-menu" onclick="trocarMenu()">Fechar</button>
           <ul>
             <li><a href="#">Cadastro de transações</a></li>
             <li><a href="#">Limpar dados</a></li>
-            <li class="active"><a href="#">Salvar no servidor</a></li>
+            <li class="active"><a href="javascript:void(0);" onclick="salvaDados();">Salvar no servidor</a></li>
           </ul>
         </nav>
       </div>

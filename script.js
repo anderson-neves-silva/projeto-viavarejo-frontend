@@ -230,7 +230,60 @@ function reescreveLista() {
   document.getElementById("lucroOuPrejuizo").innerHTML = lucroOuPrejuizo;
 }
 
-// 
+// --------------------------------------------------------
+// Salvar no servidor do airtable, Obs. não precisamos passar parâmetros nessa função pois a variável produtos está global, Obs. a  variável aluno está de forma global.
+var aluno = "8800";
+function salvaDados() {  
+  // Criando a requisição.
+  fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+    headers: {
+      Authorization: "Bearer key2CwkHb0CKumjuM"
+    } 
+  })
+  .then(response => response.json())
+  .then(responseJson => {
+    /*
+    A função "filter" ela é aplicada em tipo objeto e nos retorna um valor lógico, ela faz um filtro no array se retorna “true” mantém, se “false” sai fora do array.
+    */
+    existe = responseJson.records.filter((record) => {
+      // Teste para saber se o aluno é igual ao que será enviado, ou seja, testa se ele existe.
+      if (aluno == record.fields.Aluno) {
+        return true;
+      } 
+      
+      return false;      
+    })
+
+    // Esse aluno não está na tabela do airtable, ele pode ser cadastrado, chama a função insereDados.
+    if (existe.length == 0) {
+      insereDados();
+    } else {
+      alteraDados();
+    }
+  })
+}
+
+function insereDados() {
+  var json = JSON.stringify(produtos);
+  var body = JSON.stringify({  
+    "records": [
+      {
+        "fields": {
+          "Aluno": aluno,
+          "Json": json
+        }
+      }
+    ]
+  });  
+  fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer key2CwkHb0CKumjuM",
+      "Content-Type" : "application/json"
+    },
+    body:body
+  })
+}
 
 
 
