@@ -1,4 +1,5 @@
-/* RESET CSS */
+/* -------------------------------------------------------- */
+/* Reset CSS */
 *,
 *:after,
 *:before {
@@ -9,7 +10,8 @@
   font-size: 1em;
 }
 
-/* GLOBAL*/
+/* -------------------------------------------------------- */
+/* Global */
 body {
   font-family: "Lato";
 }
@@ -19,7 +21,8 @@ body {
   max-width: 1100px;
 }
 
-/* CLASSES AUXILIARES */
+/* -------------------------------------------------------- */
+/* Classes Auxiliares */
 img {
   max-width: 100%;
 }
@@ -52,7 +55,8 @@ img {
   border-radius: 3px;
 }
 
-/* HEADER & NAV */
+/* -------------------------------------------------------- */
+/* header & Nav */
 .main-header .container {
   display: flex;
   justify-content: space-between;
@@ -114,7 +118,8 @@ img {
   color: #aaa;
 }
 
-/* MAIN & SECTIONS */
+/* -------------------------------------------------------- */
+/* Main & Sections */
 .main-content .container {
   display: flex;
   justify-content: space-between;
@@ -235,10 +240,9 @@ img {
     transition: all 0.5s 0s ease;
   }
 
-  /* 
-  MENU HUMBURGUER
-  OBS. EU CHAMO O "opened" LÁ NO JS PARA FAZER ELE ABRIR E FECHA COM UMA FUNÇÃO, OQUE ANTES ERA FEITO COM O hover AQUI MESMO 
-  */
+  /* -------------------------------------------------------- */
+  /* Menu hambúrguer
+  Obs. eu chamo o "opened" lá no JS para fazer ele abrir e fechar com uma função, o que antes era feito com o "hover" aqui mesmo. */
   .menu-hover-control .navbar-menu.opened {
     right: 0px;
     -webkit-transition: all 0.5s 0s ease;
@@ -333,7 +337,8 @@ img {
   }
 }
 
-/* MOBILE */
+/* -------------------------------------------------------- */
+/* Mobile */
 .open-menu, .close-menu {
   background: none;
   border: 0;
