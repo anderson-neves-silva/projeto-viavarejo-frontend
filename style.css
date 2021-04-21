@@ -380,3 +380,10 @@ form em {
   color: red;
   margin-bottom: 15px;
 }
+
+#perfil-lekedin {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
