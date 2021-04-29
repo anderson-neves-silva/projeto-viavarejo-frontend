@@ -369,7 +369,6 @@ function getTable() {
 
 
 
-
 /*
 Obs. não conseguir aplicar a lógica do milhar no total para mostrar na tela, ficou dando um erro de referência na variável “valueFinalString” segui a aula assim mesmo, vídeo de explicação 3 JS em 1:20 Obs. tentei também com o toLocaleString também não deu certo (tentar depois o Fernando atribui um valor vazio no valueFinalString)
 */
